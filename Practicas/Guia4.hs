@@ -1,4 +1,3 @@
---PRACTICA N°4--
 --Ejercio1
 fibo :: Integer -> Integer
 fibo n | n == 0 = 0
