@@ -49,6 +49,22 @@ def imprimir_dos_veces(estribillo:str) -> None:
 def es_multiplo_de(n: int, m: int) -> bool:
     return n % m == 0
 
+#Ejecio2.6
+def es_par (n:int) -> bool:
+    return (es_multiplo_de (n, 2))
+
+#Ejercio2.7
+def cantidad_de_pizzas (comensales:int, porciones:int) -> int:
+    return math.ceil((comensales*porciones) / 8)
+
+#Ejercio3.1
+def alguno_es_0 (x:int, y:int) -> bool:
+    return x==0 or y==0
+
+#Ejercio3.2
+def ambos_son_0 (x:int, y:int) -> bool:
+    return x==0 and y==0
+
 #Ejercio3.3
 def es_nombre_largo (nombre: str) -> bool:
     return len(nombre) >= 3 and len(nombre) <= 8
@@ -58,6 +74,11 @@ def es_nombre_largo_con_if (nombre: str) -> bool:
         return False
     return True
 
+#Ejercio3.4
+def es_bisiesto (año:int) -> bool:
+    return not ((año % 4 != 0 or año % 100 == 0) and año % 400 != 0) 
+
+#Ejercio4.1
 #Ejercio5.1
 def el_doble_si_es_par (numero:int) -> int:
     if numero % 2 == 0:
