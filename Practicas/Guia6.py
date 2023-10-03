@@ -29,8 +29,8 @@ print (a)
 print (perimetro())
 
 #Ejercio2.1
-def imprimirSaludo (x: str) -> None:
-    print ("Hola" + x)
+def imprimirSaludo (nombre: str) -> None:
+    print ("Hola " + nombre)
 
 #Ejercio2.2
 def raiz_cuadrada_de (x:float) -> float:
