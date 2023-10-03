@@ -78,7 +78,18 @@ def es_nombre_largo_con_if (nombre: str) -> bool:
 def es_bisiesto (año:int) -> bool:
     return not ((año % 4 != 0 or año % 100 == 0) and año % 400 != 0) 
 
-#Ejercio4.1
+#Ejercio4
+def peso_pino (metros:float) -> float:
+    if metros <= 3:
+        return metros*100*3
+    return 300*3 + (metros-3)*100*2
+
+def es_peso_util (peso:float) -> None:
+    if peso >= 400 and peso <= 1000:
+        print("Si, si es util")
+    else:
+        print("No, no es util")
+
 #Ejercio5.1
 def el_doble_si_es_par (numero:int) -> int:
     if numero % 2 == 0:
