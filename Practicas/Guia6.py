@@ -90,6 +90,16 @@ def es_peso_util (peso:float) -> None:
     else:
         print("No, no es util")
 
+
+def sirve_pino (metros:float) -> None:
+    if metros >= 4/3 and metros <= 3.5:
+        print("Si, si sirve el pino")
+    else:
+        print("No, no sirve el pino")
+
+def sirve_pino_com (metros:float) -> None:
+    es_peso_util(peso_pino(metros))
+
 #Ejercio5.1
 def el_doble_si_es_par (numero:int) -> int:
     if numero % 2 == 0:
