@@ -77,3 +77,20 @@ def contraseña (contra:str) -> str:
         if hayMinuscula(contra) and hayMayuscula(contra) and hayDigitos(contra):
             return "VERDE"
     return "AMARILLA"
+
+#Ejercio1.8
+def banco (movimentos:[(chr,int)]) -> int:
+    saldo: int = 0
+    for i in range (0,len(movimentos),1):
+        if movimentos[i][0] == "I":
+            saldo += movimentos[i][1]
+        elif movimentos[i][0] == "R":
+            saldo -= movimentos[i][1]
+    return saldo
+
+#Ejercio2.1
+def ejercio2_1 (s:[int]) -> None:
+    for i in range (0,len(s),2):
+        s[i] = 0
+
+#
