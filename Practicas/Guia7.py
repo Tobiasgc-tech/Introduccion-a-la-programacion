@@ -39,10 +39,41 @@ def sumaTotal2 (s: [int]) -> int:
 
 #Ejercio1.4
 def ordenados (s: [int]) -> bool:
-    indice: int=0
-    while indice < len(s):
-        if s[indice] > s[indice + 1]:
+    for i in range (0,(len(s)-1),1):
+        if s[i] >= s[i+1]:
             return False
-        else:
-            indice += 1
     return True
+
+#Ejercio1.5
+def palabrasMayorA7 (s:[str]) -> bool:
+    for palabra in s:
+        if len(palabra) > 7:
+            return True
+    return False 
+
+#Ejercio1.7
+def hayMinuscula(contra:str) -> bool:
+    for letra in contra:
+        if "a" <= letra <= "z":
+            return True
+    return False
+
+def hayMayuscula(contra:str) -> bool:
+    for letra in contra:
+        if "A" <= contra <= "Z":
+            return True
+    return False
+
+def hayDigitos(contra:str) -> bool:
+    for letra in contra:
+        if "0" <= letra <= "9":
+            return True
+    return False
+
+def contraseña (contra:str) -> str:
+    if len(contra) < 5:
+        return "ROJA"
+    if len(contra) > 8:
+        if hayMinuscula(contra) and hayMayuscula(contra) and hayDigitos(contra):
+            return "VERDE"
+    return "AMARILLA"
