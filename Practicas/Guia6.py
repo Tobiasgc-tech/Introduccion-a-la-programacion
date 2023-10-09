@@ -106,13 +106,55 @@ def el_doble_si_es_par (numero:int) -> int:
         return numero*2
     return numero
 
+#Ejercio5.2
+def devolver_valor_si_es_par_sino_el_que_sigue (numero:int) -> int:
+    if numero % 2 == 0:
+        return numero
+    return numero + 1
+
+#Ejercio5.3
+def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9 (numero:int) -> int:
+    if numero % 9 == 0:
+        return numero*3
+    elif numero % 3 == 0:
+        return numero*2
+    return numero
+
+#Ejercio6.1
+def numerosDel1al10 () -> None:
+    a: int=1
+    while a <= 10:
+        print(a)
+        a= a+1
+
 #Ejercio6.2
 def numeros_pares_entre_10_40 () -> None:
     a: int=10
     while  a <= 40:
         print(a)
         a= a+2
+
+#Ejercio6.3
+def eco10veces() -> None:
+    a: int=1
+    while a <= 10:
+        print("eco")
+        a=a+1
+
+#Ejercio6.4
+def despegue(numero:int) -> None:
+    while numero > 0 :
+        print(numero)
+        numero = numero - 1
+    print("Despegue")
+
+#Ejercio6.5
+def viajeEnElTiempo (añopartida:int,añolleguada:int) -> None:
+    while añopartida > añolleguada:
+        añopartida = añopartida - 1
+        print("Viajo un año al pasado, estamos en el año "+str(añopartida))
         
+
 #Ejercio7
 def numeros_pares_entre_10_40_con_for () -> None:
     for num in range (10, 41, 2):
