@@ -120,6 +120,32 @@ def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9 (numero:int) -> 
         return numero*2
     return numero
 
+#Ejercio5.4
+def lindoNombre (nombre:str) -> str:
+    if len(nombre) >= 5:
+        return "Tu nombre tiene muchas letras!"
+    return "Tu nombre tiene menos de 5 caracteres!"
+
+#Ejercio5.5
+def elRango (numero:int) -> None:
+    if numero < 5:
+        print("Menor a 5")
+    elif 10 <= numero <= 20:
+        print("Entre 10 y 20")
+    elif 20 < numero:
+        print("Mayor a 20")
+
+#Ejercio5.6
+def queMeToca (sexo:str, edad:int) -> None:
+    if sexo == "F" and edad >= 60:
+        print("Andá de vacaciones")
+    elif sexo == "M" and edad >= 65:
+        print("Andá de vacaciones")
+    elif edad < 18:
+        print("Andá de vacaciones")
+    else:
+        print("Te toca trabajar")
+
 #Ejercio6.1
 def numerosDel1al10 () -> None:
     a: int=1
