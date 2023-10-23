@@ -37,7 +37,7 @@ def sumaTotal2 (s: [int]) -> int:
         total=total+elemento
     return total
 
-#Ejercio1.4
+#Ejercicios1.4
 def ordenados (s: [int]) -> bool:
     for i in range (0,(len(s)-1),1):
         if s[i] >= s[i+1]:
@@ -88,9 +88,25 @@ def banco (movimentos:[(chr,int)]) -> int:
             saldo -= movimentos[i][1]
     return saldo
 
+#def vocales (palabra:str) -> bool:
+#     for letra in range (0,len(palabra),1):
+         
+
 #Ejercio2.1
 def ejercio2_1 (s:[int]) -> None:
     for i in range (0,len(s),2):
         s[i] = 0
 
-#
+#Ejercio2.2
+def ejercio2_2 (s:[int]) -> [int]:
+    x: list = s.copy()
+    for i in range (0,len(x),2):
+        x[i] = 0
+
+#Ejercicio2.3
+def eliminarVocales (palabra:str) -> str:
+    palabranueva = ""
+    for letra in palabra:
+        if letra not in  "aeiouAEIOU":
+            palabranueva += letra
+    return palabranueva
