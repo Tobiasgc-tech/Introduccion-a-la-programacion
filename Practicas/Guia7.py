@@ -110,3 +110,40 @@ def eliminarVocales (palabra:str) -> str:
         if letra not in  "aeiouAEIOU":
             palabranueva += letra
     return palabranueva
+
+#Ejercicio2.4
+def reemplazarVocales (palabra:str) -> str:
+    palabranueva: str = ""
+    for letra in palabra:
+        if letra in "aeiou":
+            palabranueva += " "
+        else:
+            palabranueva += letra
+    return palabranueva
+
+#Ejercicio2.5
+def daVueltaStr (palabra:str) -> str:
+    palabranueva: str = ""
+    for i in range (len(palabra)-1,-1,-1):
+        palabranueva += palabra[i]
+    return palabranueva
+
+#Ejercicio2.6
+def eliminarRepetidos (palabra:str) -> str:
+    palabranueva: str = ""
+    for letra in palabra:
+        if letra not in palabranueva:
+            palabranueva += letra
+    return palabranueva
+
+#Ejercicio3
+def aprobado (notas:[int]) -> int:
+    for i in notas:
+        while i >= 4 and i <= 10:
+            if (sumaTotal2(notas) // len (notas)) >= 7:
+                return (1)
+            else:
+                return (2)
+        return (3)
+
+print(aprobado([10,1,1,1,1,1]))
