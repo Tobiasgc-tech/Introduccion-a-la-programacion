@@ -88,9 +88,23 @@ def banco (movimentos:[(chr,int)]) -> int:
             saldo -= movimentos[i][1]
     return saldo
 
-#def vocales (palabra:str) -> bool:
-#     for letra in range (0,len(palabra),1):
-         
+def vocales (palabra:str) -> bool:
+     a: bool
+     e: bool
+     i: bool
+     o: bool
+     u: bool
+     for letra in palabra:
+        if letra in "a":
+            a = True
+        elif letra in "b":
+            b = True
+        elif letra in "i":
+            i = True
+        elif letra in "o":
+            o = True
+        elif letra in "u":
+            u = True     
 
 #Ejercio2.1
 def ejercio2_1 (s:[int]) -> None:
@@ -138,12 +152,51 @@ def eliminarRepetidos (palabra:str) -> str:
 
 #Ejercicio3
 def aprobado (notas:[int]) -> int:
-    for i in notas:
-        while i >= 4 and i <= 10:
-            if (sumaTotal2(notas) // len (notas)) >= 7:
-                return (1)
-            else:
-                return (2)
-        return (3)
+    sumanotas: int = 0
+    for i in range (0,len(notas),1):
+        if notas[i] in (1,2,3):
+            return 3
+        else:
+            sumanotas += notas[i]
+    if sumanotas/len(notas) >= 7:
+        return 1
+    else:
+        return 2
+    
+#Ejercicio4.1
+def estudiantes () -> [str]:
+    listadenombres: list = []
+    nombre: str
+    while True:
+        nombre = input ("Ingresa un nombre de estudiante (o 'listo' para terminar): ")
+        if nombre != "listo": 
+            listadenombres.append(nombre)
+        else:
+            break
+    print("Los nombres que ingresó son: " + ", ".join(listadenombres))
+    return listadenombres
+#estudiantes()
 
-print(aprobado([10,1,1,1,1,1]))
+#Ejercicio4.2
+def movimientos () -> [chr,int]:
+    monto: int = 0
+    montototal: int = 0
+    operacion: chr
+    historial: [(chr,int)] = []
+    while True:
+        operacion = input ("Ingrese\n'C' para cargar monto\n'D' para descontar monto\n'X' para finalizar\n ")
+        if operacion == "C":
+            monto = int(input ("¿Que monto quiere ingresar? "))
+            historial.append((operacion,monto))
+            montototal += monto
+        elif operacion == "D":
+            monto = int(input ("¿Que monto quiere descontar? "))
+            historial.append((operacion,monto))
+            montototal -= monto
+        elif operacion == "X":
+            break
+    print (historial)
+    print ("Su monto total es de " + str(montototal))
+    return historial
+movimientos()
+
