@@ -178,7 +178,7 @@ def estudiantes () -> [str]:
 #estudiantes()
 
 #Ejercicio4.2
-def movimientos () -> [chr,int]:
+def movimientos () -> [(chr,int)]:
     monto: int = 0
     montototal: int = 0
     operacion: chr
