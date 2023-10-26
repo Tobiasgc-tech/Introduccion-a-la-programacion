@@ -184,7 +184,7 @@ def movimientos () -> [(chr,int)]:
     operacion: chr
     historial: [(chr,int)] = []
     while True:
-        operacion = input ("Ingrese\n'C' para cargar monto\n'D' para descontar monto\n'X' para finalizar\n ")
+        operacion = input ("Ingrese:\n'C' para cargar monto\n'D' para descontar monto\n'X' para finalizar\n ")
         if operacion == "C":
             monto = int(input ("¿Que monto quiere ingresar? "))
             historial.append((operacion,monto))
@@ -198,5 +198,31 @@ def movimientos () -> [(chr,int)]:
     print (historial)
     print ("Su monto total es de " + str(montototal))
     return historial
-movimientos()
+#movimientos()
 
+import random
+
+def jugar_siete_y_medio() -> None:
+    historial: [int] = []
+    total: float = 0
+    mazo: [int] = [1,2,3,4,5,6,7,10,11,12]
+    decision: str
+    while True:
+        carta = random.choice(mazo)
+        historial.append(carta)
+        if carta == 10 or carta == 11 or carta == 12:
+            total += 0.5
+        else:
+            total += carta
+        print("Su carta es " + str(carta))
+        print("Sus puntos son: " + str(total))
+        if total > 7.5:
+            print("Te pasaste de 7.5. ¡Has perdido!")
+            break
+        
+        decision = input ("¿Deseas seguir sacando cartas? (s/n): ")
+        if decision != "s":
+            break
+    return historial
+
+jugar_siete_y_medio()
