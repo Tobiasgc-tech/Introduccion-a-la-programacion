@@ -224,5 +224,39 @@ def jugar_siete_y_medio() -> None:
         if decision != "s":
             break
     return historial
+#jugar_siete_y_medio()
 
-jugar_siete_y_medio()
+#Ejercicio5.1
+def perteneceACadaUno (s:[[int]],numero:int,resultado:[bool]) -> None:
+    resultado.clear()
+    t: bool
+    for i in range (len(s)):
+        t = pertenece2 (s[i],numero)
+        resultado.append(t)
+    print (resultado)
+#perteneceACadaUno([[1,2,3],[4,1,6],[7,1,9],[10,11,1]] ,3,[])
+
+#Ejercicio5.2
+def esMatriz (matriz:[[int]]) -> bool:
+    resultado: [bool] = []
+    if len(matriz[0]) == 0:
+        return False
+    for i in range (len(matriz)):
+        if len(matriz[i]) == len(matriz [0]):
+            resultado.append(True)
+        else:
+            resultado.append(False)
+    for i in range (0,len(resultado),1):
+        if False == resultado[i]:
+            return False
+    return True
+#print(esMatriz([[1,2,3],[4,1,6],[7,1,9],[]]))
+def filasOrdenadas (matriz:[[int]],resultado:[bool]) -> None:
+    resultado.clear()
+    t: bool
+    for i in range (len(matriz)):
+        t = ordenados (matriz[i])
+        resultado.append(t)
+    print(resultado)
+
+filasOrdenadas([[1, 2, 3],[7, 5, 4],[10, 11, 12],[5, 6, 7]],[])
