@@ -14,4 +14,13 @@ def existe_palabra(palabra: str, nombre_archivo: str) -> bool:
     archivo.close()
     return palabra in texto
         
-print(existe_palabra("Hola","Prueba.txt"))
+#print(existe_palabra("Hola","Prueba.txt"))
+
+#Ejercicio1.3
+def cantidad_apariciones(nombre_archivo:str,palabra:str) -> int:
+    archivo = open(nombre_archivo,"r")
+    contenido = archivo.read()
+    contador = contenido.count(palabra)
+    archivo.close()
+    return contador
+print(cantidad_apariciones("Prueba.txt","Hola"))
