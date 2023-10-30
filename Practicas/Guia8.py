@@ -42,9 +42,24 @@ def reverso(nombre_archivo:str):
     archivo = open(nombre_archivo,"r")
     reverso = open ("reverso.txt","w")
     lineas = archivo.readlines()
-    lineas_inversas = []
-    for linea in range (len(lineas)-1,-1,-1):
-        lineas_inversa 
+    for linea in lineas:
+        reverso.insert(0,linea)
     archivo.close()
     reverso.close()
-reverso("Prueba.txt") 
+#reverso("Prueba.txt") 
+
+#Ejercicio8
+from queue import LifoQueue as Pila
+p = Pila ()
+p . put (1) # apilar
+elemento = p . get () # desapilar
+p . empty () # vacia ?
+def generar_nros_al_azar(cantidad:int,desde:int,hasta:int) -> Pila:
+    resultado: Pila = Pila()
+    while cantidad < 0:
+        numero = random.randint(desde,hasta)
+        resultado.put(numero)
+        cantindad - 1
+    return resultado
+
+print(generar_nros_al_azar(10,0,10))
