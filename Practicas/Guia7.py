@@ -259,4 +259,4 @@ def filasOrdenadas (matriz:[[int]],resultado:[bool]) -> None:
         resultado.append(t)
     print(resultado)
 
-filasOrdenadas([[1, 2, 3],[7, 5, 4],[10, 11, 12],[5, 6, 7]],[])
+#filasOrdenadas([[1, 2, 3],[7, 5, 4],[10, 11, 12],[5, 6, 7]],[])
