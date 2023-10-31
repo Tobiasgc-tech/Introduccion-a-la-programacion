@@ -50,16 +50,13 @@ def reverso(nombre_archivo:str):
 
 #Ejercicio8
 from queue import LifoQueue as Pila
-p = Pila ()
-p . put (1) # apilar
-elemento = p . get () # desapilar
-p . empty () # vacia ?
+import random
 def generar_nros_al_azar(cantidad:int,desde:int,hasta:int) -> Pila:
-    resultado: Pila = Pila()
-    while cantidad < 0:
-        numero = random.randint(desde,hasta)
-        resultado.put(numero)
-        cantindad - 1
-    return resultado
-
-print(generar_nros_al_azar(10,0,10))
+    p: Pila = Pila()
+    while cantidad > 0:
+        cantidad -= 1
+        numero: int = random.randint(desde,hasta)
+        p.put(numero)
+    print(list(p.queue))
+    return p
+generar_nros_al_azar(10,0,10)
