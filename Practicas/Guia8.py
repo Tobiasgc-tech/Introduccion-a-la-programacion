@@ -42,11 +42,45 @@ def reverso(nombre_archivo:str):
     archivo = open(nombre_archivo,"r")
     reverso = open ("reverso.txt","w")
     lineas = archivo.readlines()
-    for linea in lineas:
-        reverso.insert(0,linea)
+    for linea in range(len(lineas)-1,-1,-1):
+        reverso.write(lineas[linea])
     archivo.close()
     reverso.close()
 #reverso("Prueba.txt") 
+
+#Ejercicio4
+def insertarFrase (nombre_archivo:str, frase:str):
+    archivo = open(nombre_archivo,"a")
+    archivo.write(frase)
+    archivo.close()
+#insertarFrase("Prueba.txt","\nESTO ES LA PRUEBA")
+
+#Ejercicio5
+def insertarAlPrincipio (nombre_archivo:str, frase:str):
+    archivo_viejo = open(nombre_archivo,"r")
+    contenido_anterior = archivo_viejo.read()
+    archivo = open(nombre_archivo,"w")
+    archivo.write(frase)
+    archivo.write(contenido_anterior)
+    archivo.close()
+    archivo_viejo.close()
+#insertarAlPrincipio ("Prueba.txt","Esta es una nueva linea al principio.\n")
+
+#Ejercicio7
+def promedioEstudiante(lu:str) -> float:
+    total_notas: float = 0
+    cantidad_notas: float = 0
+    archivo = open("Prueba.txt","r")
+    for linea in archivo:
+        elementos = linea.strip().split(",")
+        if elementos[0] == lu:
+            nota = float(elementos[3])
+            total_notas += nota
+            cantidad_notas += 1
+    promedio: float = total_notas / cantidad_notas
+    archivo.close()
+    return promedio
+#print(promedioEstudiante("12345"))
 
 #Ejercicio8
 from queue import LifoQueue as Pila
@@ -326,14 +360,59 @@ def agruparPorLongitud(nombre_archivo:str) -> dict:
                 d[clave] = 1
     archivo.close()
     return d
-print(agruparPorLongitud("Prueba.txt"))
+#print(agruparPorLongitud("Prueba.txt"))
 
 #Ejercicio20
-from Guia7 import aprobado
-def promedio () -> dict:
-    d: dict = {}
-    alumnos: list = []
-    while True:
-        libreta = input("Ingresa LU (o '0' para terminar):")
-        if libreta != 0:
+def promedioEstudianteDiccionario(lu:str) -> dict:
+    total_notas: float = 0
+    cantidad_notas: float = 0
+    archivo = open("Prueba.txt","r")
+    alumno: dict = {}
+    for linea in archivo:
+        elementos = linea.strip().split(",")
+        if elementos[0] == lu:
+            nota = float(elementos[3])
+            total_notas += nota
+            cantidad_notas += 1
+            promedio: float = total_notas / cantidad_notas
+            alumno[elementos[0]] = promedio
+    archivo.close()
+    return alumno
+#print(promedioEstudianteDiccionario("12345"))
 
+#Ejercicico21
+def laPalabraMasFrecuente(nombre_archivo:str) -> str:
+    archivo = open(nombre_archivo,"r")
+    d: dict = {}
+    valor_maximo = None
+    clave_maxima = None
+    for linea in archivo.readlines():
+        palabras = linea.split()
+        for palabra in palabras:
+            if palabra in d:
+                d[palabra] += 1
+            else:
+                d[palabra] = 1
+    for clave, valor in d.items():
+        if valor_maximo is None or valor > valor_maximo:
+            valor_maximo = valor
+            clave_maxima = clave
+    return clave_maxima
+#print(laPalabraMasFrecuente("Prueba.txt"))
+
+#Ejercicio22
+historiales: dict = {}
+def visitar_sitio(historiales: dict, usuario:str, sitio:str):
+    if usuario in historiales:
+        historial_usario = historiales[usuario]
+    else:
+        historial_usario: Pila = Pila()
+        historiales[usuario] = historial_usario
+    historial_usario.put(sitio)
+"""
+visitar_sitio(historiales, "usuario1", "sitio1")
+visitar_sitio(historiales, "usuario1", "sitio2")
+visitar_sitio(historiales, "usuario2", "sitio3")
+print("Historial del usuario1:", list(historiales["usuario1"].queue))
+print("Historial del usuario2:", list(historiales["usuario2"].queue))
+"""
