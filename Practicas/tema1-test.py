@@ -1,6 +1,8 @@
 import unittest
 from SimilacroParcial import elementos_exclusivos, ultima_aparicion, contar_traducciones_iguales, convertir_a_diccionario
-
+#Agregar ", convertir_a_diccionario" al final de la ultima funcion importada de "Simulacro", una vez haya terminado de hacer el ejercicio en cuestion en
+#"Simulacro", y ademas, descomentar(sacando los ''') el ultimo test ("Ej4Test"). Haciendo todo lo anterior puedo correr el programa sin mas una vez haya
+#finalizado el Simulacro del Parcial.
 class Ej1Test(unittest.TestCase):
     def test_trivial(self):
         res = ultima_aparicion([1],1)
@@ -9,6 +11,10 @@ class Ej1Test(unittest.TestCase):
     def test_ejemplo(self):
         res = ultima_aparicion([-1,4,0,4,100,0,100,0,-1,-1],0)
         self.assertEqual(res, 7)
+    
+    def test_prueba(self):
+        res = ultima_aparicion([-1],-1)
+        self.assertEqual(res, 0)
 
 class Ej2Test(unittest.TestCase):
     def test_trivial(self):
@@ -27,9 +33,9 @@ class Ej3Test(unittest.TestCase):
 
     def test_ejemplo(self):
         aleman = {"Mano": "Hand", "Pie": "Fuss", "Dedo": "Finger", "Cara": "Gesicht"}
-        ingles = {"Pie": "Foot", "Dedo": "Finger", "Mano": "Fuss"}
+        ingles = {"Pie": "Foot", "Dedo": "Finger", "Mano": "Hand"}
         res = contar_traducciones_iguales(ingles,aleman)
-        self.assertEqual(res,1)
+        self.assertEqual(res,2)
 
 class Ej4Test(unittest.TestCase):
     def test_trivial(self):
